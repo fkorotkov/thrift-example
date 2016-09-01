@@ -8,14 +8,14 @@ public class Main {
 
         Foo foo = new Foo();
         foo.setId(1);
-        serializer.serialize(foo);
-
-        FooBean fooBean = new FooBean();
-        fooBean.setId(1);
-        serializer.serialize(fooBean);
+        System.out.println(serializer.serialize(foo));
 
         FooPrivateMembers fooPrivateMembers = new FooPrivateMembers();
         fooPrivateMembers.setId(1);
-        serializer.serialize(fooPrivateMembers);
+        System.out.println(serializer.serialize(fooPrivateMembers));
+
+        FooBeans fooBeans = new FooBeans();
+        fooBeans.setId(1);
+        System.out.println(serializer.serialize(fooBeans)); // throws Required field 'num' is unset! Struct:FooBeans(id:1, num:0)
     }
 }
